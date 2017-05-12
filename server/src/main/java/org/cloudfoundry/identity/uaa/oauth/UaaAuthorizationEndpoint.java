@@ -389,7 +389,7 @@ public class UaaAuthorizationEndpoint extends AbstractEndpoint {
                     generateCode(authorizationRequest, authUser)
                 ),
                 false,
-                false, //so that we send absolute URLs always
+                true, //so that we send absolute URLs always
                 false
             ) {
                 @Override

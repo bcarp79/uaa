@@ -75,7 +75,12 @@ public abstract class UaaUrlUtils {
     }
 
     public static boolean isValidRegisteredRedirectUrl(String url) {
+        if ("/login".equals(url)) {
+            return true;
+        }
         if (hasText(url)) {
+
+
             final String permittedURLs =
                     "^(http(\\*|s)?://)" +    //URL starts with 'www.' or 'http://' or 'https://' or 'http*://
                     "((.*:.*@)?)"+                   //username/password in URL

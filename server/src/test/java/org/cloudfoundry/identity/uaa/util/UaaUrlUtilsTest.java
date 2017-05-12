@@ -61,6 +61,7 @@ public class UaaUrlUtilsTest {
         "http://username:password@*.com/path"
     );
     private List<String> validUrls = Arrays.asList(
+        "/login",
         "http://localhost",
         "http://localhost:8080",
         "http://localhost:8080/uaa",

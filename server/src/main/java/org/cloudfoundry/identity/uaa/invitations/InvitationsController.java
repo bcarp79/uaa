@@ -254,11 +254,13 @@ public class InvitationsController {
 
         if (expiringCode == null || expiringCode.getData() == null) {
             logger.debug("Failing invitation. Code not found.");
+            SecurityContextHolder.clearContext();
             return handleUnprocessableEntity(model, response, "error_message_code", "code_expired", "invitations/accept_invite");
         }
         Map<String,String> data = JsonUtils.readValue(expiringCode.getData(), new TypeReference<Map<String,String>>() {});
         if (principal == null || data.get("user_id") == null || !data.get("user_id").equals(principal.getId())) {
             logger.debug("Failing invitation. Code and user ID mismatch.");
+            SecurityContextHolder.clearContext();
             return handleUnprocessableEntity(model, response, "error_message_code", "code_expired", "invitations/accept_invite");
         }
 

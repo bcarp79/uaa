@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem "sinatra"
+gem "sinatra", ">= 1.4.4"
 gem "rest-client"
 gem "yajl-ruby"
 gem "sequel"
 gem "ruby-openid"
-gem "thin"
+gem "thin", ">= 1.6.1"
